@@ -13,6 +13,9 @@ def canUnlockAll(boxes):
         True if all boxes can be opened, false otherwise
 
     """
+    if len(boxes) <= 1:
+        return True
+
     is_open = []
     for i in range(len(boxes)):
         for j in range(len(boxes[i])):
