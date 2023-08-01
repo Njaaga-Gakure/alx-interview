@@ -25,9 +25,6 @@ def canUnlockAll(boxes):
                 else:
                     if boxes[i][j] == k:
                         is_open.append("{} is_opened".format(k))
-                    else:
-                        is_open.append("{} is_not_opened".format(k))
-    is_open = [item for item in is_open if item.split(" ")[1] == "is_opened"]
     unique_list = []
     [unique_list.append(item) for item in is_open if item not in unique_list]
     return True if len(unique_list) == (len(boxes) - 1) else False
