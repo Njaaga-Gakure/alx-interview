@@ -2,7 +2,7 @@
 """Obtain minimum number of operations."""
 
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """
     Get minimum amount of opration to complete a task.
 
