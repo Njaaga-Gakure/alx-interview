@@ -2,10 +2,7 @@
 """UTF-8 validation module."""
 
 
-from typing import List
-
-
-def validUTF8(data: List[int]) -> bool:
+def validUTF8(data):
     """
     Check if data is valid UTF-8 encoding.
 
@@ -51,13 +48,13 @@ def validUTF8(data: List[int]) -> bool:
                 return False
             continue
         elif (data[i] & 0b11110000) == 0b11100000:
-            if (data[1 + 2] >= len(data)
+            if (data[i + 2] >= len(data)
                or any((data[i + j] & 0b11000000) != 0b10000000
                for j in range(1, 3))):
                 return False
             continue
         elif (data[i] & 0b11111000) == 0b11110000:
-            if (data[1 + 3] >= len(data)
+            if (data[i + 3] >= len(data)
                or any((data[i + j] & 0b11000000) != 0b10000000
                for j in range(1, 4))):
                 return False
