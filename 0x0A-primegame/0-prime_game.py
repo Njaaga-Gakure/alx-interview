@@ -22,6 +22,8 @@ def has_prime(num_set):
 
 def isWinner(x, nums):
     """Return the winner of a prime game."""
+    if x <= 0 or not nums or x > len(nums):
+        return None
     player = 'Maria'
     round_wins = {'Ben': 0, 'Maria': 0}
     is_game_on = True
